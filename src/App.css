@@ -1,38 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Inter', sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .responsive-width {
+      width: 80%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hidden {
+  display: none;
+}
+
+
+.messages-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow-y: auto;
+  max-height: 69%; /* Adjust as needed */
+  position: fixed;
+  bottom: 21%; /* Adjust based on the height of your input bar */
+  right: 1%;
 }
 
-.App-link {
-  color: #61dafb;
+.ai-message {
+  background-color: rgba(34, 62, 221, 0.175);
+  align-self: flex-start;
+  display: inline-block; /* Allows the bubble to shrink/grow with content */
+  position: relative; /* Position relative to its normal position */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 20px;
+  box-shadow: 0 4px 4px rgba(100, 8, 170, 0.603);
+  margin-top: 10px;
+  max-width: 50%; /* Ensures that the bubble doesn't get too wide */
+  word-wrap: break-word; /* Wraps long words to the next line */
+  margin-bottom: 10px; /* Space between messages */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-message {
+  background-color: rgba(238, 182, 12, 0.175);
+  align-self: flex-end;
+  display: inline-block; /* Allows the bubble to shrink/grow with content */
+  position: relative; /* Position relative to its normal position */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 20px;
+  box-shadow: 0 4px 4px rgba(100, 8, 170, 0.603);
+  margin-top: 10px;
+  max-width: 50%; /* Ensures that the bubble doesn't get too wide */
+  margin-bottom: 10px; /* Space between messages */
 }
+
+.message-bubble {
+  display: inline-block; /* Allows the bubble to shrink/grow with content */
+  position: relative; /* Position relative to its normal position */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 20px;
+  box-shadow: 0 4px 4px rgba(100, 8, 170, 0.603);
+  margin-top: 10px;
+  max-width: 50%; /* Ensures that the bubble doesn't get too wide */
+  margin-bottom: 10px; /* Space between messages */
+}
+
+.image-container {
+  padding-top: 1%;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  gap: 100px; /* Space between flex items, if there are multiple */
+  /* Add width and height for the container if necessary */
+}
+
+.image-container img {
+  width: 30vw; /* 30% of the viewport width */
+  height: auto; /* Maintain the aspect ratio */
+  max-width: 100%; /* Optional: Ensure the image doesn't overflow its container */
+}
+
