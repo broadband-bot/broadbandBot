@@ -39,6 +39,12 @@ const BroadbandSignup = () => {
     const [areSuggestionsVisible, setSuggestionsVisible] = useState(true);
     const messagesEndRef = useRef(null);
 
+    useEffect(() => {
+        const welcomeMessage = "Hello 👋 I’m the Faircount Chatbot. I can help you with questions about receiving discounted internet services through the Affordable Connectivity Program.";
+        // Directly add the welcome message to the messages state.
+        setMessages([{ type: 'ai', text: welcomeMessage, typing: false }]);
+    }, []);
+
     const handleTypingDone = (messageIndex) => {
         setMessages(currentMessages =>
             currentMessages.map((msg, index) =>
