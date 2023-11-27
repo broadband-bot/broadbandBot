@@ -19,7 +19,7 @@ body {
 }
 @media (min-width: 640px) {
   .responsive-width {
-      width: 80%;
+      width: 100%;
   }
 }
 
@@ -27,14 +27,34 @@ body {
   display: none;
 }
 
+.title {
+  display: flex;
+  align-items: center; /* This aligns the child elements (your image and h1) vertically in the center */
+  justify-content: flex-start; /* This aligns the child elements to the start (left) of the container */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#image {
+  width: 60px;
+  height: auto;
+  margin-right: 10px; /* Optional: Adds some space between the image and the text */
+}
+
+h1 {
+  margin: 0; /* Removes default margin to ensure alignment */
+}
+
 
 .messages-container {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  width: 98%;
   max-height: 69%; /* Adjust as needed */
   position: fixed;
-  bottom: 21%; /* Adjust based on the height of your input bar */
+  bottom: 22%; /* Adjust based on the height of your input bar */
   right: 1%;
 }
 

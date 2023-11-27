@@ -101,8 +101,9 @@ const BroadbandSignup = () => {
     return (
         <div className="bg-white flex flex-col h-screen">
             <div className="responsive-width mx-auto flex-1">
-                <div className="text-3xl font-semibold text-center mb-4">
-                    Broadband4All
+                <div className="title text-3xl font-semibold text-center mb-4">
+                <img src="/splash.png" style={{ width: '60px', height: 'auto' }}/>
+                <h1>Broadband4All</h1>
                 </div>
 
                 <div className="p-6">
