@@ -40,9 +40,15 @@ const BroadbandSignup = () => {
     const messagesEndRef = useRef(null);
 
     useEffect(() => {
-        const welcomeMessage = "Hello 👋 I’m the Faircount Chatbot. I can help you with questions about receiving discounted internet services through the Affordable Connectivity Program.";
+        const welcomeMessage = "Hello 👋 I’m the Faircount Chatbot."
+        const questions = "I can help you with questions about receiving discounted internet services through the Affordable Connectivity Program.";
+        const application = "I can also help walk you through the application process itself. If you would like to fill out an application to receive discounted interent services text \"WIFI\" so we can get started!";
         // Directly add the welcome message to the messages state.
-        setMessages([{ type: 'ai', text: welcomeMessage, typing: false }]);
+        setMessages([
+            { type: 'ai', text: welcomeMessage, typing: false },
+            { type: 'ai', text: questions, typing: false },
+            { type: 'ai', text: application, typing: false }
+        ]);
     }, []);
 
     const handleTypingDone = (messageIndex) => {
@@ -59,6 +65,11 @@ const BroadbandSignup = () => {
 
 
     const handleSendClick = async () => {
+        if (inputValue.trim() === "") {
+            // Do nothing if inputValue is empty or just whitespace
+            return;
+        }
+
         if (inputValue.trim() !== '') {
             const newMessages = [...messages, { text: inputValue, type: 'user' }];
             setMessages(newMessages);
@@ -85,12 +96,7 @@ const BroadbandSignup = () => {
 
     const handleSuggestionClick = (suggestionText) => {
         setInputValue(suggestionText); // Set the inputValue state
-    
-        // Simulate sending the message
-        // Using setTimeout to ensure state is updated before sending
-        setTimeout(() => {
-            handleSendClick();
-        }, 0);
+        setSuggestionsVisible(false);
     };
     
 
@@ -102,7 +108,7 @@ const BroadbandSignup = () => {
         <div className="bg-white flex flex-col h-screen">
             <div className="responsive-width mx-auto flex-1">
                 <div className="title text-3xl font-semibold text-center mb-4">
-                <img src="/splash.png" style={{ width: '60px', height: 'auto' }}/>
+                <img src="/splash.png" id='image'/>
                 <h1>Broadband4All</h1>
                 </div>
 
@@ -112,17 +118,21 @@ const BroadbandSignup = () => {
                         Commonly Asked
                     </h2>)}
                     {areSuggestionsVisible && (
-                        <div className="grid grid-cols-2 gap-4 mb-6">
-                            <button id="suggestion1" onClick={() => handleSuggestionClick("How do I Qualify?")} className="bg-purple-600 text-white rounded-lg p-3">
+                       <div className="grid grid-cols-2 gap-4 mb-6">
+                            <button id="suggestion1" onClick={() => handleSuggestionClick("How do I Qualify?")}
+                                className="bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
                                 How do I Qualify?
                             </button>
-                            <button id="suggestion2" onClick={() => handleSuggestionClick("Is there a deadline?")} className="bg-purple-600 text-white rounded-lg p-3">
+                            <button id="suggestion2" onClick={() => handleSuggestionClick("Is there a deadline?")}
+                                className="bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
                                 Is there a deadline?
                             </button>
-                            <button id="suggestion3" onClick={() => handleSuggestionClick("What Documents Do I Need?")} className="bg-purple-600 text-white rounded-lg p-3">
+                            <button id="suggestion3" onClick={() => handleSuggestionClick("What Documents Do I Need?")}
+                                className="bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
                                 What Documents Do I Need?
                             </button>
-                            <button id="suggestion4" onClick={() => handleSuggestionClick("Can you walk me through an application?")} className="bg-purple-600 text-white rounded-lg p-3">
+                            <button id="suggestion4" onClick={() => handleSuggestionClick("Can you walk me through an application?")}
+                                className="bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
                                 Can you walk me through an application?
                             </button>
                         </div>
@@ -139,8 +149,8 @@ const BroadbandSignup = () => {
                         value={inputValue}
                         onChange={handleInputChange}
                     />
-                    <button onClick={handleSendClick} className="text-white">
-                         <FontAwesomeIcon icon={faPaperPlane} />
+                    <button onClick={handleSendClick} className={inputValue.trim() === "" ? "text-black" : "text-white"}>
+                        <FontAwesomeIcon icon={faPaperPlane} />
                     </button>
                 </div>
 
