@@ -52,7 +52,7 @@ h1 {
   flex-direction: column;
   overflow-y: auto;
   width: 98%;
-  max-height: 69%; /* Adjust as needed */
+  max-height: 39%; /* Adjust as needed */
   position: fixed;
   bottom: 22%; /* Adjust based on the height of your input bar */
   right: 1%;

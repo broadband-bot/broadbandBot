@@ -113,30 +113,45 @@ const BroadbandSignup = () => {
                 </div>
 
                 <div className="p-6">
-                    {areSuggestionsVisible && (
+                    
                     <h2 className="text-3xl font-semibold text-center mb-4">
                         Commonly Asked
-                    </h2>)}
-                    {areSuggestionsVisible && (
+                    </h2>
+                    
                        <div className="grid grid-cols-2 gap-4 mb-6">
-                            <button id="suggestion1" onClick={() => handleSuggestionClick("How do I Qualify?")}
-                                className="bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
-                                How do I Qualify?
+                            <button id="suggestion1" onClick={() => handleSuggestionClick("What is the ACP?")}
+                                className=" flex bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
+                                <div className = "flex flex-col items-start">
+                                <h2 className = "font-bold">What is the ACP?</h2>
+                                <h4 className = "text-grey">Learn about the Affordable Connectivity Program</h4>
+                                </div>
                             </button>
-                            <button id="suggestion2" onClick={() => handleSuggestionClick("Is there a deadline?")}
-                                className="bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
-                                Is there a deadline?
+                            <button id="suggestion2" onClick={() => handleSuggestionClick("What documents do I need for the ACP?")}
+                                className="flex bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
+                                <div className = "flex flex-col items-start">
+                                <h2 className = "font-bold">What documents do I need?</h2>
+                                <h4 className = "text-grey">Get help accessing documents to prepare for registration</h4>
+                                </div>
+                                
                             </button>
-                            <button id="suggestion3" onClick={() => handleSuggestionClick("What Documents Do I Need?")}
-                                className="bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
-                                What Documents Do I Need?
+                            <button id="suggestion3" onClick={() => handleSuggestionClick("How do I qualify for the ACP?")}
+                                className="flex bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
+                                <div className = "flex flex-col items-start">
+                                <h2 className = "font-bold">How do I qualify for the ACP?</h2>
+                                <h4 className = "text-grey">Get information on how to qualify for the ACP</h4>
+                                </div>
+                                
                             </button>
                             <button id="suggestion4" onClick={() => handleSuggestionClick("Can you walk me through an application?")}
-                                className="bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
-                                Can you walk me through an application?
+                                className="flex bg-purple-600 text-white rounded-lg p-3 hover:bg-purple-700 transition duration-150 ease-in-out">
+                                <div className = "flex flex-col items-start">
+                                <h2 className = "font-bold">Can you walk me through the application?</h2>
+                                <h4 className = "text-grey">Step-by-step assistance to apply</h4>
+                                </div>
+                                
                             </button>
                         </div>
-                    )}
+                    
                 </div>
             </div>
 
