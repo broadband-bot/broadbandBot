@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import Chat from './components/Chat';
+import './App.css'
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="App" style={{ 
+      display: 'flex', 
+      flexDirection: 'column', 
+      minHeight: '100vh',
+    }}>
+      <header style={{ 
+        minHeight: '50px',
+        position: 'sticky', 
+        top: 0, 
+        zIndex: 1000, 
+        backgroundColor: 'white',
+      }}>
+        <div style={{ left: '20%', display: 'flex', justifyContent: 'center', width: '100%' }}>
+          <img src="/faircount.avif" style={{ marginTop: 'auto', maxWidth: '300px', height: 'auto', position: 'absolute', left: '50%', transform: 'translateX(-50%)' }} alt="Faircount Logo" />
+        </div>
       </header>
+      <main style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+        <Chat />
+      </main>
     </div>
   );
-}
+};
 
 export default App;
