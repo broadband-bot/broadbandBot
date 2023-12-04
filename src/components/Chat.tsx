@@ -9,7 +9,6 @@ import OpenAI from "openai";
 import { MessageDto } from "./models/MessageDto";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import BotInstructions from "./BotInstructions.txt"
 
 
 
@@ -60,7 +59,7 @@ const Chat: React.FC = () => {
     // Create an assistant
     const assistant = await openai.beta.assistants.create({
       name: "Expert On the Affordable Connectivity Program",
-      instructions: BotInstructions,
+      instructions: "You are a expert on helping sign people up for Federal Broadand Access, specifically, throught the FCC's Affordable Connectivity Program. Some of the communities that will interact with you may come from low-literacy background so please ensure to be concise and give responses that are reasonable to read. If the first messase they send is \"WIFI\" walk them throug applying for the Affordable Connectivity Program step by step. When you give a link be sure to provide the raw link.",
       tools: [{ type: "retrieval" }],
       model: "gpt-4-1106-preview",
     });

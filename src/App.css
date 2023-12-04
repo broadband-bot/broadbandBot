@@ -44,7 +44,7 @@
 
 .loading-circle {
   border: 5px solid rgba(0, 0, 0, 0.1); /* Light grey border */
-  border-top: 5px solid blue; /* Blue border for the top side */
+  border-top: 5px solid #8910da; /* Blue border for the top side */
   border-radius: 50%; /* Circular shape */
   width: 100px; /* Size of the circle */
   height: 100px; /* Size of the circle */
