@@ -9,6 +9,10 @@ const App: React.FC = () => {
   const [showChatBot, setChatBot] = useState(false);
 
   useEffect(() => {
+    document.title = "Broadband Bot";
+  }, []);
+
+  useEffect(() => {
     // Set another timer to show the BroadbandSignup after 5 seconds
     const signupTimer = setTimeout(() => {
       setChatBot(true);
